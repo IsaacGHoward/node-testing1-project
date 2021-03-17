@@ -8,6 +8,11 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  let copy = {...obj};
+  Object.keys(copy).map(function(key, index) {
+    copy[key] = copy[key].trim();
+  });
+  return copy;
 }
 
 /**
