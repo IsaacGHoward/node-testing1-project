@@ -49,12 +49,25 @@ describe('[Exercise 4] Counter', () => {
   })
   it('[6] the FIRST CALL of counter.countDown returns the initial count', () => {
     // ✨ test away
+    const actual = counter.countDown();
+    expect(actual).toEqual(3);
   })
   it('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
     // ✨ test away
+    counter.countDown();
+    const actual = counter.countDown();
+    expect(actual).toEqual(2);
   })
   it('[8] the count eventually reaches zero but does not go below zero', () => {
     // ✨ test away
+    counter.countDown();
+    counter.countDown();
+    counter.countDown();
+    counter.countDown();
+    counter.countDown();
+    counter.countDown();
+    const actual = counter.countDown();
+    expect(actual).toEqual(0);
   })
 })
 
