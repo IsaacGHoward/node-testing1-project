@@ -78,21 +78,46 @@ describe('[Exercise 5] Seasons', () => {
   })
   it('[9] the FIRST call of seasons.next returns "summer"', () => {
     // ✨ test away
+    const actual = seasons.next();
+    expect(actual).toEqual('summer');
   })
   it('[10] the SECOND call of seasons.next returns "fall"', () => {
     // ✨ test away
+    seasons.next();
+    const actual = seasons.next();
+    expect(actual).toEqual('fall');
   })
   it('[11] the THIRD call of seasons.next returns "winter"', () => {
     // ✨ test away
+    seasons.next();
+    seasons.next();
+    const actual = seasons.next();
+    expect(actual).toEqual('winter');
   })
   it('[12] the FOURTH call of seasons.next returns "spring"', () => {
     // ✨ test away
+    seasons.next();
+    seasons.next();
+    seasons.next();
+    const actual = seasons.next();
+    expect(actual).toEqual('spring');
   })
   it('[13] the FIFTH call of seasons.next returns again "summer"', () => {
     // ✨ test away
+    seasons.next();
+    seasons.next();
+    seasons.next();
+    seasons.next();
+    const actual = seasons.next();
+    expect(actual).toEqual('summer');
   })
   it('[14] the 40th call of seasons.next returns "spring"', () => {
     // ✨ test away
+    let actual;
+    for(var i = 0; i< 40; i++){
+      actual = seasons.next();
+    }
+    expect(actual).toEqual('spring');
   })
 })
 
